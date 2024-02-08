@@ -14,6 +14,6 @@ public class Main {
         }
 
         System.out.println(sum);
-        System.out.println(Math.round(sum/3));
+        System.out.println((int)Math.round((double)sum/3));
     }
 }
