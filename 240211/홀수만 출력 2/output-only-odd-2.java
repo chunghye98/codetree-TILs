@@ -10,7 +10,7 @@ public class Main {
         int b = Integer.parseInt(st.nextToken());
 
         StringBuilder sb = new StringBuilder();
-        for(int i=1; i>=b; i--){
+        for(int i=a; i>=b; i--){
             if(i % 2 != 0){
                 sb.append(i+" ");
             }
