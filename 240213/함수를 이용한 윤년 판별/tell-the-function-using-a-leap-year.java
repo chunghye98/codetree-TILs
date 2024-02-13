@@ -12,11 +12,12 @@ public class Main {
     }
 
     public static boolean check(int y) {
-        if(y % 4 == 0) {
+        
+        if(y % 4 == 0 && y % 100 == 0 && y % 400 == 0) {
             return true;
         }else if(y%4 == 0 && y % 100 == 0) {
             return false;
-        }else if(y % 4 == 0 && y % 100 == 0 && y % 400 == 0) {
+        }else if(y % 4 == 0) {
             return true;
         }else{
             return false;
