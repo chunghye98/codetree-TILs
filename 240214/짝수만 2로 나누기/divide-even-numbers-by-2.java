@@ -14,14 +14,16 @@ public class Main {
         }
 
         solve(arr);
+
+        for(int value : arr){
+            System.out.print(value+" ");
+        }
     }
 
     public static void solve(int[] arr) {
         for(int i=0; i<arr.length; i++){
             if(arr[i] % 2 == 0) {
-                System.out.print(arr[i]/2 + " ");
-            }else {
-                System.out.print(arr[i]+" ");
+                arr[i] /= 2;
             }
         }
     }
