@@ -13,6 +13,11 @@ public class Main {
         List<String> result = new ArrayList<>();
         for(int i=0; i<n; i++){
             String input = br.readLine();
+
+            if(input.size > t.length){
+                continue;
+            }
+
             if(input.substring(0, t.length()).equals(t)) {
                 result.add(input);
             }
