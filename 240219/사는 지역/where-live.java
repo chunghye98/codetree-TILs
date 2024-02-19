@@ -17,7 +17,7 @@ public class Main {
         Person before = persons[0];
         Person result = null;
         for(int i = 1; i<n; i++) {
-            if(isNext(before, persons[i])) {
+            if(before.name.compareTo(persons[i].name) < 0) {
                 before = persons[i];
                 result = persons[i];
             }
@@ -25,18 +25,6 @@ public class Main {
         System.out.println("name "+result.name);
         System.out.println("addr "+result.address);
         System.out.println("city "+result.location);
-    }
-
-    public static boolean isNext(Person before, Person current) {
-        char[] beforeName = before.name.toCharArray();
-        char[] currentName = current.name.toCharArray();
-
-        for(int i=0; i<beforeName.length; i++) {
-            if(beforeName[i] < currentName[i]) {
-                return true;
-            }
-        }
-        return false;
     }
 }
 
