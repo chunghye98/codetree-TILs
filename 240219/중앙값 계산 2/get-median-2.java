@@ -15,7 +15,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<n; i++){
             if(i % 2 == 0) {
-                Arrays.sort(arr, 0, i);
+                Arrays.sort(arr, 0, i+1);
                 int mid = i/2;
                 sb.append(arr[mid]+" ");
             }
