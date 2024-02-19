@@ -17,7 +17,7 @@ public class Main {
         Person before = persons[0];
         Person result = null;
         for(int i = 1; i<n; i++) {
-            if(before.name.compareTo(persons[i].name) < 0) {
+            if(persons[i].name.compareTo(before.name) > 0) {
                 before = persons[i];
                 result = persons[i];
             }
