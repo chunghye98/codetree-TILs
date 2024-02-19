@@ -14,7 +14,7 @@ public class Main {
         for(int i=0; i<n; i++){
             String input = br.readLine();
 
-            if(input.length() > t.length){
+            if(input.length() < t.length()){
                 continue;
             }
 
