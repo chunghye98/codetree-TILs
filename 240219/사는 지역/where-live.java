@@ -15,16 +15,16 @@ public class Main {
         }
 
         Person before = persons[0];
-        Person result = null;
+        int index = -1;
         for(int i = 1; i<n; i++) {
             if(persons[i].name.compareTo(before.name) > 0) {
                 before = persons[i];
-                result = persons[i];
+                index = i;
             }
         }
-        System.out.println("name "+result.name);
-        System.out.println("addr "+result.address);
-        System.out.println("city "+result.location);
+        System.out.println("name "+persons[index].name);
+        System.out.println("addr "+persons[index].address);
+        System.out.println("city "+persons[index].location);
     }
 }
 
