@@ -10,18 +10,16 @@ public class Main {
         int k = Integer.parseInt(st.nextToken());
         String t = st.nextToken();
 
-        String[] arr = new String[n];
+        List<String> result = new ArrayList<>();
         for(int i=0; i<n; i++){
             String input = br.readLine();
             if(input.substring(0, t.length()).equals(t)) {
-                arr[i] = input;
-            }else{
-                arr[i] = "zzzzzz";
+                result.add(input);
             }
         }
 
-        Arrays.sort(arr);
+        Collections.sort(result);
 
-        System.out.println(arr[k-1]);
+        System.out.println(result.get(k-1));
     }
 }
