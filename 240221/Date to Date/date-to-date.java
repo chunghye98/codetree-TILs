@@ -13,11 +13,17 @@ public class Main {
     
         int[] dates = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int result = 0;
-        for(int i=m1; i<m2-1; i++){
+        for(int i=m1-1; i<m2; i++){
+            if(i == m1 - 1) {
+                result += dates[i] - d1 + 1;
+                continue;
+            }
+            if(i == m2 - 1) {
+                result += d2;
+                continue;
+            }
             result += dates[i];
         }
-        result += (dates[m1-1]-d1) + d2 +1;
-
         System.out.println(result);
     }
 }
