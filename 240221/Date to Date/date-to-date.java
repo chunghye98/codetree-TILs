@@ -12,6 +12,12 @@ public class Main {
         int d2 = Integer.parseInt(st.nextToken());
     
         int[] dates = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        if(m1 == m2 && d1 == d2){
+            System.out.println(1);
+            return;
+        }
+        
         int result = 0;
         for(int i=m1-1; i<m2; i++){
             if(i == m1 - 1) {
