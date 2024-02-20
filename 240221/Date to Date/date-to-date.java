@@ -13,11 +13,15 @@ public class Main {
     
         int[] dates = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         
-        if(m1 == m2 && d1 == d2){
-            System.out.println(1);
-            return;
-        }
-        
+        if(m1 == m2){
+            if( d1 == d2){
+                System.out.println(1);
+                return;
+            }else if(d1 < d2) {
+                System.out.println(d2 - d1 + 1);
+                return;
+            }
+        }        
         int result = 0;
         for(int i=m1-1; i<m2; i++){
             if(i == m1 - 1) {
