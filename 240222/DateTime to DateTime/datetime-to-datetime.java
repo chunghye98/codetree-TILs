@@ -10,12 +10,14 @@ public class Main {
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
 
-        if(a <= 11 && b <= 11 && c < 11) {
+        int next = a * 24 * 60 + b * 60 + c;
+        int before = 11 * 24 * 60 + 11 * 60 + 11;
+
+        if(next < before) {
             System.out.println(-1);
             return;
         }
 
-        int result = (a * 24 * 60 + b * 60 + c) - (11 * 24 * 60 + 11 * 60 + 11);
-        System.out.println(result);
+        System.out.println(next-before);
     }
 }
