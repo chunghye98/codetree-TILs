@@ -16,10 +16,15 @@ public class Main {
         int target = findDates(m2, d2);
         int standard = findDates(m1, d1);
 
-        int count = target-standard+2;
+        int count = target-standard;
 
-        System.out.println(count / 7);
-
+        int resultDay = count % 7; 
+        int targetDay = findIndex(day);
+        if(resultDay <= targetDay) {
+            System.out.println(count/7 + 1);
+        }else {
+            System.out.println(count / 7);
+        }
     }
 
     public static int findIndex(String day) {
