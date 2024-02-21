@@ -12,19 +12,11 @@ public class Main {
         int d2 = Integer.parseInt(st.nextToken());
         String day = br.readLine();
 
-
         int target = findDates(m2, d2);
         int standard = findDates(m1, d1);
 
-        int count = target-standard + 1;
-
-        int resultDay = count % 7; 
-        int targetDay = findIndex(day);
-        if(resultDay <= targetDay) {
-            System.out.println(count/7 + 1);
-        }else {
-            System.out.println(count / 7);
-        }
+        int totalDays = target - standard + 1; 
+        System.out.println(totalDays/7);
     }
 
     public static int findIndex(String day) {
