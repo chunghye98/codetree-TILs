@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-        // 여기에 코드를 작성해주세요.
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int m1 = Integer.parseInt(st.nextToken());
@@ -12,30 +11,33 @@ public class Main {
         int d2 = Integer.parseInt(st.nextToken());
         String day = br.readLine();
 
-        int target = findDates(m2, d2);
-        int standard = findDates(m1, d1);
+        int totalDays = findDates(m2, d2) - findDates(m1, d1) + 1;
 
-        int totalDays = target - standard + 1; 
-        System.out.println(totalDays/7);
+        int targetDayIndex = findIndex(day);
+
+        int days = totalDays - targetDayIndex;
+        int count = 0;
+        while(days > 0) {
+            days /= 7;
+            count++;
+        }
+
+        System.out.println(count);
     }
 
     public static int findIndex(String day) {
-        String[] days = {"", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-        for(int i=0; i<days.length; i++) {
-            if(days[i].equals(day)) {
-                return i;
-            }
-        }
-        return -1;
+        // 요일 인덱스 찾기
+        List<String> days = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+        return days.indexOf(day);
     }
 
     public static int findDates(int m, int d) {
-        int[] dates = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        // 연초부터 주어진 날짜까지의 총 일수 계산
+        int[] dates = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int result = 0;
-        for(int i=0; i<m-1; i++) {
+        for (int i = 0; i < m - 1; i++) {
             result += dates[i];
         }
-        result += d;
-        return result;
+        return result + d;
     }
 }
