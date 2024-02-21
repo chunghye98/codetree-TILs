@@ -16,7 +16,7 @@ public class Main {
         int target = findDates(m2, d2);
         int standard = findDates(m1, d1);
 
-        int count = target-standard;
+        int count = target-standard + 1;
 
         int resultDay = count % 7; 
         int targetDay = findIndex(day);
@@ -28,7 +28,7 @@ public class Main {
     }
 
     public static int findIndex(String day) {
-        String[] days = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+        String[] days = {"", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
         for(int i=0; i<days.length; i++) {
             if(days[i].equals(day)) {
                 return i;
