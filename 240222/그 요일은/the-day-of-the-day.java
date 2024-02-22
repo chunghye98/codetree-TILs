@@ -15,14 +15,20 @@ public class Main {
 
         int targetDayIndex = findIndex(day);
 
-        int days = totalDays - targetDayIndex;
-        int count = 0;
-        while(days > 0) {
-            days /= 7;
-            count++;
+        int count = targetDayIndex + 1;
+
+        if(targetDayIndex+1 >= totalDays) {
+            System.out.println(0);
+            return;
         }
 
-        System.out.println(count);
+        int result = 1;
+        while(count <= totalDays) {
+            result++;
+            count += 7;
+        }
+
+        System.out.println(result);
     }
 
     public static int findIndex(String day) {
