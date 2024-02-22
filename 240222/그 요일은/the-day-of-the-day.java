@@ -39,7 +39,7 @@ public class Main {
 
     public static int findDates(int m, int d) {
         // 연초부터 주어진 날짜까지의 총 일수 계산
-        int[] dates = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] dates = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int result = 0;
         for (int i = 0; i < m - 1; i++) {
             result += dates[i];
