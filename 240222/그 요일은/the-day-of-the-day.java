@@ -22,7 +22,7 @@ public class Main {
             return;
         }
 
-        int result = 1;
+        int result = 0;
         while(count <= totalDays) {
             result++;
             count += 7;
