@@ -9,7 +9,7 @@ public class Main {
     
         int[] arr = new int[100_000];
         int index = 0;
-        while(n > 0) {
+        while(true) {
             if(n < 2) {
                 arr[index++] = n;
                 break;
