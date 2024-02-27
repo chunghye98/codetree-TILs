@@ -15,7 +15,7 @@ public class Main {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
 
-            for(int j=a+100; j<b+100; j++) {
+            for(int j=a+100; j<b+100; j++) { // 끝점에서 닿는 경우는 겹치는 것이 아니기 때문에 부등호만 사용
                 arr[j] += 1;
             }
         }
