@@ -7,7 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        int[] arr = new int[100];
+        int[] arr = new int[101];
         Arrays.fill(arr, 0);
         StringTokenizer st;
         for(int i=0; i<n; i++) {
