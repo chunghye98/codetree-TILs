@@ -10,7 +10,7 @@ public class Main {
         int offset = 100;
 
         StringTokenizer st;
-        for(int i=0; i<2; i++) {
+        for(int i=1; i<=2; i++) {
             st = new StringTokenizer(br.readLine());
 
             int x1 = Integer.parseInt(st.nextToken());
@@ -20,9 +20,9 @@ public class Main {
 
             for(int j=offset+y1; j<offset+y2; j++) {
                 for(int k=offset+x1; k<offset+x2; k++) {
-                    if(i % 2 != 0) { // 파란색
+                    if(i % 2 != 0) { // 빨간색
                         map[j][k] = 1;
-                    }else { // 빨간색
+                    }else { // 파란색
                         map[j][k] = 2;
                     }
                 }
@@ -31,7 +31,7 @@ public class Main {
         int count = 0;
         for(int[] m : map) {
             for(int v : m) {
-                if(v == 1) count++;
+                if(v == 2) count++;
             }
         }
         System.out.println(count);
