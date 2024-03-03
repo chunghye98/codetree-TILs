@@ -10,7 +10,7 @@ public class Main {
         int offset = 100;
 
         StringTokenizer st;
-        for(int i=1; i<=2; i++) {
+        for(int i=1; i<=n; i++) {
             st = new StringTokenizer(br.readLine());
 
             int x1 = Integer.parseInt(st.nextToken());
@@ -28,6 +28,7 @@ public class Main {
                 }
             }
         }
+
         int count = 0;
         for(int[] m : map) {
             for(int v : m) {
