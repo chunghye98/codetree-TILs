@@ -40,6 +40,7 @@ public class Main {
         int minY = Integer.MAX_VALUE;
         int maxY = Integer.MIN_VALUE;
 
+        boolean flag = false;
         for(int i=0; i<map.length; i++) {
             for(int j=0; j<map[i].length; j++) {
                 if(map[i][j] == 1) {
@@ -47,10 +48,15 @@ public class Main {
                     maxX = Math.max(maxX, j);
                     minY = Math.min(minY, i);
                     maxY = Math.max(maxY, i);
+                    flag = true;
                 }
             }
         }
 
+        if(!flag) {
+            System.out.println(0);
+            return;
+        }
         int sum = (maxX - minX + 1) * (maxY - minY + 1);
         System.out.println(sum);
     }
