@@ -15,12 +15,16 @@ public class Main {
 
             if(i == 0 || before == x) {
                 count++;
+                before = x;
+                max = Math.max(max, count);
             }else {
+                count++;
+                max = Math.max(max, count);
                 count = 0;
+                before = x;
             }
-            before = x;
-            max = Math.max(max, count);
+            
         }
-        System.out.println(max+1);
+        System.out.println(max);
     }
 }
