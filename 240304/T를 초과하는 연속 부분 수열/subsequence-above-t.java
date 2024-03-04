@@ -1,3 +1,12 @@
+/*
+1. 배열로 입력받는다.
+2. 배열을 돌면서
+  - if 첫 번째가 아니면서 이전과 지금의 값이 t보다 크면 count++;
+  - else count = 0;
+  Math.max(max, count);
+3. max 출력
+*/
+
 import java.io.*;
 import java.util.*;
 
