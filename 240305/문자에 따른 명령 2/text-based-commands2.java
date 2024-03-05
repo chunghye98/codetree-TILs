@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
 
     static int[] dx = {0, 1, 0, -1}; // 북 동 남 서
-    static int[] dy = {-1, 0, 1, 0};
+    static int[] dy = {1, 0, -1, 0};
 
     public static void main(String[] args) throws Exception{
         // 여기에 코드를 작성해주세요.
