@@ -7,8 +7,8 @@ import java.util.*;
 
 public class Main {
     static int n;
-    static int[] dx = {0, 1, -1, 0}; // 북동서남
-    static int[] dy = {1, 0, 0, -1};
+    static int[] dx = {-1, 0, 0, 1}; // 북동서남, 행렬
+    static int[] dy = {0, 1, -1, 0};
 
 
     public static void main(String[] args) throws Exception {
@@ -40,14 +40,15 @@ public class Main {
         }
         
         while(t > 0) {
-            int curX = c + dx[dir];
-            int curY = r + dy[dir];
+            int curX = r + dx[dir];
+            int curY = c + dy[dir];
             if(inRange(curX, curY)) {
-                c = curX;
-                r = curY;
+                r = curX;
+                c = curY;
             }else {
                 dir = 3 - dir;
             }
+            // System.out.println("r : "+ r+", c : "+c);
             t--;
         }
 
