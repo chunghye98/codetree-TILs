@@ -15,7 +15,7 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
 
 
-        int[] moveA = new int[100_001];
+        int[] moveA = new int[1_000_001];
         
         for(int i=0; i<n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -27,7 +27,7 @@ public class Main {
 
         time = 0;
         location = 0;
-        int[] moveB = new int[100_000];
+        int[] moveB = new int[1_000_001];
         for(int i=0; i<m; i++) {
             st = new StringTokenizer(br.readLine());
             String d = st.nextToken();
@@ -36,7 +36,7 @@ public class Main {
             moveB = move(d, t, moveB);
         }
 
-        for(int i=0; i<100_000; i++){
+        for(int i=1; i<1_000_001; i++){
             if(moveA[i] == moveB[i]) {
                 System.out.println(i);
                 return;
@@ -46,15 +46,16 @@ public class Main {
     }
 
     public static int[] move(String d, int t, int[] arr) {
-        for(int i = time; i < time + t; i++) {
-            arr[i] = location;
+        arr[time] = location;
+        for(int i = time + 1; i <= time + t; i++) {
             if(d.equals("L")){
-                location--;
+                location -= 1;
             }else {
-                location++;
+                location += 1;
             }
+            arr[i] = location;
         }
-        
+        time += t;        
         return arr;
     }
 }
