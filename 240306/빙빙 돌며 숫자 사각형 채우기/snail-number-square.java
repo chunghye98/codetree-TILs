@@ -6,13 +6,14 @@ public class Main {
     static int[] dx = {0, 1, 0, -1}; // 행렬, 동남서북
     static int[] dy = {1, 0, -1, 0};
     static int n;
+    static int m;
 
     public static void main(String[] args) throws Exception{
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         int[][] map = new int[n][m];
         int x = 0;
@@ -24,6 +25,7 @@ public class Main {
             int curY = y + dy[dir];
 
             if(!inRange(curX, curY) || map[curX][curY] != 0) {
+                System.out.println("turn");
                 dir = (dir + 1) % 4;
             }
 
@@ -40,7 +42,7 @@ public class Main {
         }
     }
     public static boolean inRange(int curX, int curY) {
-        if(curX < 0 || curY < 0 || curX >= n || curY >= n) {
+        if(curX < 0 || curY < 0 || curX >= n || curY >= m) {
             return false;
         }
         return true;
