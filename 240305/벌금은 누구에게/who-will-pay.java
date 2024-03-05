@@ -12,15 +12,14 @@ public class Main {
 
         int[] students = new int[n + 1];
         Arrays.fill(students, 0);
+        int ans = -1;
+
         for(int i=0; i<m; i++) {
             int x = Integer.parseInt(br.readLine());
             students[x] += 1; 
-        }
 
-        int ans = -1;
-        for(int i=1; i<=n; i++){
-            if(students[i] >= k) {
-                ans = i;
+            if(students[x] >= k) {
+                ans = x;
                 break;
             }
         }
