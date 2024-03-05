@@ -36,7 +36,7 @@ public class Main {
             moveB = move(d, t, moveB);
         }
 
-        for(int i=1; i<1_000_001; i++){
+        for(int i=1; i<time; i++){
             if(moveA[i] == moveB[i]) {
                 System.out.println(i);
                 return;
