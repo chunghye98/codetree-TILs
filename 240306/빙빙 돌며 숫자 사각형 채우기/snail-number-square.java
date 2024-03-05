@@ -25,7 +25,6 @@ public class Main {
             int curY = y + dy[dir];
 
             if(!inRange(curX, curY) || map[curX][curY] != 0) {
-                System.out.println("turn");
                 dir = (dir + 1) % 4;
             }
 
