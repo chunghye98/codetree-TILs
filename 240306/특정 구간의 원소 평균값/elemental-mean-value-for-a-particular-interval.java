@@ -20,7 +20,7 @@ public class Main {
 
                 int avg = sum / (j - i + 1);
 
-                for(int k=i; k<j; k++) {
+                for(int k=i; k<=j; k++) {
                     if(avg == nums[k]) {
                         count++;
                         break;
