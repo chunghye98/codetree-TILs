@@ -18,7 +18,12 @@ public class Main {
             for(int j=i; j<n; j++) {
                 sum += nums[j];
 
-                int avg = sum / (j - i + 1);
+                double avg = 0.0;
+                if(i==j) {
+                    avg = nums[i];
+                }else {
+                    avg = (double)sum / (j - i + 1);
+                }
 
                 for(int k=i; k<=j; k++) {
                     if(avg == nums[k]) {
