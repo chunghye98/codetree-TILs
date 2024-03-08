@@ -26,6 +26,10 @@ public class Main {
                 }
             }
         }
+        if(min == Integer.MAX_VALUE) {
+            System.out.println(-1);
+            return;
+        }
         System.out.println(min);
     }
 
