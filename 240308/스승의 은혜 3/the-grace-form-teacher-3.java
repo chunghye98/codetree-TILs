@@ -15,24 +15,36 @@ public class Main {
             students[i][0] = Integer.parseInt(st.nextToken());
             students[i][1] = Integer.parseInt(st.nextToken());
         }
-
-        int max = Integer.MIN_VALUE;
+        
+        int max = 0;
         for(int i=0; i<n; i++) {
-            int sum = students[i][0] / 2 + students[i][1];
-            int count = 1;
-            for(int j=0; j<n; j++) {
-                if(i == j) continue;
-                sum += students[j][0] + students[j][1];
+            int budget = b;
+            int count = 0;
+            // 선택된 학생의 점수를 반으로 줄임
+            budget -= students[i][0]/2 + students[i][1];
+            if(budget >= 0) count++;
 
-                if(sum > b) {
-                    sum -= students[j][0] + students[j][1];
-                    continue;
+            // 나머지 학생들에 대해 원래 점수로 선발
+            int[] others = new int[n-1];
+            int idx = 0;
+            for(int j=0; j<n; j++) {
+                if(i != j) {
+                    others[idx++] = students[j][0] + students[j][1];
                 }
-                
-                count++;
             }
-            max = Math.max(count, max);
+            Arrays.sort(others);
+            for(int cost : others) {
+                if(budget - cost >= 0) {
+                    budget -= cost;
+                    count++;
+                } else {
+                    break;
+                }
+            }
+
+            max = Math.max(max, count);
         }
+
         System.out.println(max);
     }
 }
