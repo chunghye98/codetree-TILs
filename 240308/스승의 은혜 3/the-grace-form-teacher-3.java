@@ -22,18 +22,14 @@ public class Main {
             int count = 1;
             for(int j=0; j<n; j++) {
                 if(i == j) continue;
-
                 sum += students[j][0] + students[j][1];
 
                 if(sum > b) {
                     sum -= students[j][0] + students[j][1];
-                    break;
+                    continue;
                 }
                 
                 count++;
-            }
-            if(sum % 2 != 0) {
-                continue;
             }
             max = Math.max(count, max);
         }
