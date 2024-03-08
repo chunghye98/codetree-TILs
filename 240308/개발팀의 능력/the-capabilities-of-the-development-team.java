@@ -38,6 +38,10 @@ public class Main {
         int team2 = developers[k];
         int team3 = sum - team1 - team2;
 
+        if(team1 == team2 || team2 == team3 || team3 == team1) {
+            return Integer.MAX_VALUE;
+        }
+
         int max = Math.max((Math.max(team1, team2)), team3);
         int min = Math.min((Math.min(team1, team2)), team3);
 
