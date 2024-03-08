@@ -26,12 +26,12 @@ public class Main {
                 sum += students[j][0] + students[j][1];
 
                 if(sum > b) {
-                    max = Math.max(max, count);
                     break;
                 }
                 
                 count++;
             }
+            max = Math.max(count, max);
         }
         System.out.println(max);
     }
