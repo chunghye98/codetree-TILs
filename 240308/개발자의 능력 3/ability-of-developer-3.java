@@ -20,7 +20,9 @@ public class Main {
         for(int i=0; i<6; i++) {
             for(int j=1; j<6; j++) {
                 for(int k=2; k<6; k++) {
-                    min = Math.min(min, getTeamSum(i, j, k));
+                    if(i != j && j != k && k != i){
+                        min = Math.min(min, getTeamSum(i, j, k));
+                    }
                 }
             }
         }
