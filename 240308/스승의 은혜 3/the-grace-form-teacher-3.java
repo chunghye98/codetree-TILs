@@ -26,10 +26,14 @@ public class Main {
                 sum += students[j][0] + students[j][1];
 
                 if(sum > b) {
+                    sum -= students[j][0] + students[j][1];
                     break;
                 }
                 
                 count++;
+            }
+            if(sum % 2 != 0) {
+                continue;
             }
             max = Math.max(count, max);
         }
