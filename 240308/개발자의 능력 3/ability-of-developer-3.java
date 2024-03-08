@@ -17,8 +17,8 @@ public class Main {
         }
 
         int min = Integer.MAX_VALUE;
-        for(int i=0; i<4; i++) {
-            for(int j=1; j<5; j++) {
+        for(int i=0; i<6; i++) {
+            for(int j=1; j<6; j++) {
                 for(int k=2; k<6; k++) {
                     min = Math.min(min, getTeamSum(i, j, k));
                 }
