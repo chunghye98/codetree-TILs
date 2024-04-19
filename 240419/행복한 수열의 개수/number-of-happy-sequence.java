@@ -2,11 +2,17 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+
+
+    static int[] seq = new int[100];
+    static int n;
+    static int m;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         int[][] map = new int[n][n];
         for(int i=0; i<n; i++) {
@@ -18,69 +24,43 @@ public class Main {
 
         int result = 0;
 
-        if(m == 1) {
-            // 행 검사
-            for(int i=0; i<n; i++) {
-                int num = map[i][0];
-                int count = 1;
-                for(int j=1; j<n; j++) {
-                    if(map[i][j] != num) {
-                        result++;
-                        break;
-                    }
-                }
-            }
-
-            for(int j=0; j<n; j++) {
-                int num = map[0][j];
-                int count = 1;
-                for(int i=1; i<n; i++) {
-                    if(map[i][j] != num) {
-                        result++;
-                        break;
-                    }
-                }
-            }
-            System.out.println(result);
-            return;
-        }
-
         // 행 검사 
         for(int i=0; i<n; i++) {
-            int num = map[i][0];
-            int count = 1;
-            for(int j=1; j<n; j++) {
-                if(map[i][j] == num) {
-                    count++;
-                    if(count >= m) { // 같은 값이 m개가 되면 더 셀 필요 없으므로 break 
-                        result++;
-                        break;
-                    }
-                    continue;
-                }
-                num = map[i][j];
-                count = 1;
+            for(int j=0; j<n; j++) {
+                seq[j] = map[i][j];
+            }
+
+            if(isHappySeq()) {
+                result++;
             }
         }
 
         // 열 검사 
         for(int j=0; j<n; j++) {
-            int num = map[0][j];
-            int count = 1;
-            for(int i=1; i<n; i++) {
-                if(map[i][j] == num) {
-                    count++;
-                    if(count >= m) {
-                        result++;
-                        break;
-                    }
-                    continue;
-                }
-                num = map[i][j];
-                count = 1;
+            for(int i=0; i<n; i++) {
+                seq[i] = map[i][j];
+            }
+
+            if(isHappySeq()) {
+                result++;
             }
         }
-        System.out.println(result);
-            
+
+        System.out.println(result);    
+    }
+
+    public static boolean isHappySeq() {
+        int max = Integer.MIN_VALUE;
+        int count = 1;
+        for(int i=1; i<n; i++) {
+            if(seq[i-1] == seq[i]) {
+                count++;
+            }else{
+                count = 1;
+            }
+            max = Math.max(max, count);
+        }
+
+        return max >= m;
     }
 }
