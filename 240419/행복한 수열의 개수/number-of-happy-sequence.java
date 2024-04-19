@@ -50,10 +50,8 @@ public class Main {
             int num = map[i][0];
             int count = 1;
             for(int j=1; j<n; j++) {
-                System.out.println("map[i][j]: "+map[i][j]);
                 if(map[i][j] == num) {
                     count++;
-                    System.out.println("row count: "+count);
                     if(count >= m) { // 같은 값이 m개가 되면 더 셀 필요 없으므로 break 
                         result++;
                         break;
@@ -72,7 +70,6 @@ public class Main {
             for(int i=1; i<n; i++) {
                 if(map[i][j] == num) {
                     count++;
-                    System.out.println("col count: "+count);
                     if(count >= m) {
                         result++;
                         break;
