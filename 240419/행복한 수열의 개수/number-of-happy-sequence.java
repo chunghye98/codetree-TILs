@@ -45,6 +45,7 @@ public class Main {
                     count++;
                     if(count >= m) {
                         result++;
+                        break;
                     }
                     continue;
                 }
