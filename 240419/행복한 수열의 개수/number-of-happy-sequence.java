@@ -25,14 +25,14 @@ public class Main {
             for(int j=1; j<n; j++) {
                 if(map[i][j] == num) {
                     count++;
+                    if(count >= m) { // 같은 값이 m개가 되면 더 셀 필요 없으므로 break 
+                        result++;
+                        break;
+                    }
                     continue;
                 }
                 num = map[i][j];
                 count = 1;
-            }
-
-            if(count >= m) {
-                result++;
             }
         }
 
@@ -43,14 +43,13 @@ public class Main {
             for(int i=1; i<n; i++) {
                 if(map[i][j] == num) {
                     count++;
+                    if(count >= m) {
+                        result++;
+                    }
                     continue;
                 }
                 num = map[i][j];
                 count = 1;
-            }
-
-            if(count >= m) {
-                result++;
             }
         }
         System.out.println(result);
