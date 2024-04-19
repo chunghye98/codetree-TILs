@@ -50,7 +50,7 @@ public class Main {
     }
 
     public static boolean isHappySeq() {
-        int max = Integer.MIN_VALUE;
+        int max = 1;
         int count = 1;
         for(int i=1; i<n; i++) {
             if(seq[i-1] == seq[i]) {
