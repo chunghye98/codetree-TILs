@@ -22,7 +22,7 @@ public class Main {
         int count = 0;
         for(int i=0; i<lines.size(); i++) {
             Line line = lines.get(i);
-            if(line.a >= end) {
+            if(line.a > end) {
                 end = line.b;
                 count++;
             }
