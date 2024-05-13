@@ -29,6 +29,12 @@ public class Main {
         bfs(r1-1, c1-1);   
 
         int result = map[r2-1][c2-1];
+
+        if(r1 == r2 && c1 == c2) {
+            System.out.println(0);
+            return;
+        }
+
         if(result > 0) {
             System.out.println(result);
         }else {
