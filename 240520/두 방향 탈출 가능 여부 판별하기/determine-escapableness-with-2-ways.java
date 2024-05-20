@@ -34,7 +34,12 @@ public class Main {
         dfs(0, 0);
 
         // 3. 출력
-        System.out.println(result[n-1][m-1]);
+        int answer = result[n-1][m-1];
+        if(answer > 0) {
+            System.out.println(1);
+            return;
+        }
+        System.out.println(0);
     }
 
     public static void dfs(int y, int x) {
