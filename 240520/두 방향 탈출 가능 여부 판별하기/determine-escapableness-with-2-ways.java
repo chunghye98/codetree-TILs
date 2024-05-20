@@ -47,7 +47,7 @@ public class Main {
             int nextY = dy[i] + y;
             int nextX = dx[i] + x;
 
-            if(isRange(nextY, nextX) && !visit[nextY][nextX] && map[nextY][nextX] == 0) {
+            if(isRange(nextY, nextX) && !visit[nextY][nextX] && map[nextY][nextX] == 1) {
                 result[nextY][nextX] = result[y][x] + 1;
                 visit[nextY][nextX] = true;
                 dfs(nextY, nextX);
