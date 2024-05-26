@@ -35,8 +35,8 @@ public class Main {
                 dfs(i, j);
                 if(count >= 4) {
                     result++;
-                    max = Math.max(count, max);
                 }
+                max = Math.max(count, max);
                 count = 0;
             }
         }
@@ -49,13 +49,11 @@ public class Main {
             int nextY = y + dy[i];
             int nextX = x + dx[i];
 
-            if(!isRange(nextY, nextX) || visit[nextY][nextX] || map[y][x] != map[nextY][nextX]) {
-                continue;
+            if(isRange(nextY, nextX) && !visit[nextY][nextX] && map[y][x] == map[nextY][nextX]) {
+                count++;
+                visit[nextY][nextX] = true;
+                dfs(nextY, nextX);
             }
-
-            count++;
-            visit[nextY][nextX] = true;
-            dfs(nextY, nextX);
         }
     }
 
