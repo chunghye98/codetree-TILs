@@ -25,10 +25,10 @@ public class Main {
         }
 
         int max = Integer.MIN_VALUE;
-        count = 0;
         int result = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
+                count = 0;
                 if(visit[i][j]) {
                     continue;
                 }
@@ -37,7 +37,6 @@ public class Main {
                     result++;
                 }
                 max = Math.max(count, max);
-                count = 0;
             }
         }
 
