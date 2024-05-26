@@ -28,10 +28,11 @@ public class Main {
         int result = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
-                count = 0;
                 if(visit[i][j]) {
                     continue;
                 }
+                count = 1;
+                visit[i][j] = true;
                 dfs(i, j);
                 if(count >= 4) {
                     result++;
