@@ -15,10 +15,9 @@ public class Main {
             sums[i] = sums[i-1] + Integer.parseInt(st.nextToken());
         }
 
-
         int max = Integer.MIN_VALUE;
-        for(int i=n-1; i>=n-k-1; i--) {
-            max = Math.max(sums[i]-sums[i+1-k], max); 
+        for(int i=0; i<n-k; i++) {
+            max = Math.max(max, sums[i+k] - sums[i]);
         }
         System.out.println(max);
     }
