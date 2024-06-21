@@ -18,7 +18,7 @@ public class Main {
 
         int max = Integer.MIN_VALUE;
         for(int i=n-1; i>=n-k-1; i--) {
-            max = Math.max(sums[i]-sums[i-k], max); 
+            max = Math.max(sums[i]-sums[i+1-k], max); 
         }
         System.out.println(max);
     }
