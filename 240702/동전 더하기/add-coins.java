@@ -18,9 +18,9 @@ public class Main {
         int count = 0;
         int index = 0;
         while(k > 1) {
-            int n = list.get(index);
-            count += k / n;
-            k = k % n;
+            int coin = list.get(index);
+            count += k / coin;
+            k = k % coin;
             index++;
         }
         System.out.println(count);
