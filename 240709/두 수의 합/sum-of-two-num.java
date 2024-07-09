@@ -23,7 +23,7 @@ public class Main {
         // 2. map 돌면서 value 누적해서 출력
         int sum = 0;
         for(int key : map.keySet()) {
-            if(map.get(k-key) == 1) {
+            if(map.get(k-key) != null && map.get(k-key) == 1) {
                 sum += map.get(key);
             }
         }
