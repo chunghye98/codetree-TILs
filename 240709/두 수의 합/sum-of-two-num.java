@@ -13,6 +13,10 @@ public class Main {
         inputs = br.readLine().split(" ");
         for(int i=0; i<n; i++) {
             int key = Integer.parseInt(inputs[i]);
+            if(map.get(key) != null && key*2 == k) {
+                map.put(key, map.get(key)+1);
+                continue;
+            }
             map.put(key, 0);
         }
 
