@@ -50,12 +50,18 @@ public class Main {
     public static int[] getPriceAndMin() {
         int sum = 0;
         int min = Integer.MAX_VALUE;
+
+        if(list.size() == 1) {
+            return new int[]{map[0][0], map[0][0]};
+        }
+
         for(int i=0; i<list.size()-1; i++) {
             sum += map[list.get(i)][list.get(i+1)];
             min = Math.min(min, map[list.get(i)][list.get(i+1)]);
         }
 
         sum += map[list.get(list.size()-1)][0];
+        System.out.printf("sum : %d, min : %d\n", sum, min);
 
         return new int[]{sum, min};
     }
