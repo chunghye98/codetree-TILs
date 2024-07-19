@@ -61,7 +61,6 @@ public class Main {
         }
 
         sum += map[list.get(list.size()-1)][0];
-        System.out.printf("sum : %d, min : %d\n", sum, min);
 
         return new int[]{sum, min};
     }
