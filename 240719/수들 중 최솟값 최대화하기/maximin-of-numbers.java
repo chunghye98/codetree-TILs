@@ -25,9 +25,11 @@ public class Main {
             int[] temp = getPriceAndMin();
             int sum = temp[0];
             
-            if(sum > max) {
-                max = Math.max(max, sum);
+            if(sum == max) {
                 ans = Math.min(ans, temp[1]);
+            }else if(sum > max) {
+                max = sum;
+                ans = temp[1];
             }
             return;
         }
@@ -61,6 +63,7 @@ public class Main {
         }
 
         sum += map[list.get(list.size()-1)][0];
+        min = Math.min(min, map[list.get(list.size()-1)][0]);
 
         return new int[]{sum, min};
     }
