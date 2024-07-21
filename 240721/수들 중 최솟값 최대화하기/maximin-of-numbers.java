@@ -25,9 +25,12 @@ public class Main {
             int sum = sumAndMin[0];
             int min = sumAndMin[1];
 
-            if(max <= sum) {
-                max = sum;
+            if(max == sum) {
                 ans = Math.max(ans, min);
+            }
+            if(max < sum) {
+                max = sum;
+                ans = min;
             }
             return;
         }
