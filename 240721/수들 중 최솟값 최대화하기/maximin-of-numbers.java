@@ -9,7 +9,7 @@ public class Main {
     static boolean visit[];
     static List<Integer> list = new ArrayList<>();
     static int max = Integer.MIN_VALUE;
-    static int ans = Integer.MAX_VALUE;
+    static int ans = Integer.MIN_VALUE;
 
     public static void main(String[] args) throws Exception {
         input();
@@ -25,9 +25,9 @@ public class Main {
             int sum = sumAndMin[0];
             int min = sumAndMin[1];
 
-            if(max < sum) {
+            if(max <= sum) {
                 max = sum;
-                ans = Math.min(ans, min);
+                ans = Math.max(ans, min);
             }
             return;
         }
@@ -56,6 +56,10 @@ public class Main {
             sum += value;
             min = Math.min(min, value);
         }
+
+        int last = map[list.get(list.size()-1)][0];
+        sum += last;
+        min = Math.min(min, last);
 
         return new int[]{sum, min};
     }
