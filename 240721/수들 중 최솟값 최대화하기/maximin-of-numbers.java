@@ -21,17 +21,8 @@ public class Main {
 
     public static void find(int curN) {
         if(curN == n) {
-            int[] sumAndMin = getSumAndMin();
-            int sum = sumAndMin[0];
-            int min = sumAndMin[1];
-
-            if(max == sum) {
-                ans = Math.max(ans, min);
-            }
-            if(max < sum) {
-                max = sum;
-                ans = min;
-            }
+            int min = getMin();
+            ans = Math.max(min, ans);
             return;
         }
 
@@ -50,21 +41,16 @@ public class Main {
         }
     }
 
-    public static int[] getSumAndMin() {
-        int sum = 0;
+    public static int getMin() {
         int min = Integer.MAX_VALUE;
-
         for(int i=0; i<list.size()-1; i++) {
             int value = map[list.get(i)][list.get(i+1)];
-            sum += value;
-            min = Math.min(min, value);
+            min = Math.min(value, min);
         }
 
         int last = map[list.get(list.size()-1)][list.get(0)];
-        sum += last;
-        min = Math.min(min, last);
-
-        return new int[]{sum, min};
+        min = Math.min(last, min);
+        return min;
     }
 
     public static void input() throws Exception {
