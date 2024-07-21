@@ -8,7 +8,6 @@ public class Main {
     static int map[][];
     static boolean visit[];
     static List<Integer> list = new ArrayList<>();
-    static int max = Integer.MIN_VALUE;
     static int ans = Integer.MIN_VALUE;
 
     public static void main(String[] args) throws Exception {
@@ -43,13 +42,9 @@ public class Main {
 
     public static int getMin() {
         int min = Integer.MAX_VALUE;
-        for(int i=0; i<list.size()-1; i++) {
-            int value = map[list.get(i)][list.get(i+1)];
-            min = Math.min(value, min);
+        for(int i=0; i<list.size(); i++) {
+            min = Math.min(min, map[i][list.get(i)]);
         }
-
-        int last = map[list.get(list.size()-1)][list.get(0)];
-        min = Math.min(last, min);
         return min;
     }
 
