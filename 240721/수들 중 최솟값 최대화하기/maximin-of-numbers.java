@@ -57,7 +57,7 @@ public class Main {
             min = Math.min(min, value);
         }
 
-        int last = map[list.get(list.size()-1)][0];
+        int last = map[list.get(list.size()-1)][list.get(0)];
         sum += last;
         min = Math.min(min, last);
 
