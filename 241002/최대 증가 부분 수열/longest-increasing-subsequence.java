@@ -20,15 +20,13 @@ public class Main {
     }
 
     public static void solve() {
-        Arrays.fill(dp, Integer.MIN_VALUE);
+        Arrays.fill(dp, 1);
         dp[0] = 1;
 
         for(int i=1; i<N; i++) {
             for(int j=0; j<i; j++) {
                 if(arr[j] < arr[i]) {
                     dp[i] = Math.max(dp[i], dp[j]+1);
-                }else {
-                    dp[i] = dp[j];
                 }
             }
         }
