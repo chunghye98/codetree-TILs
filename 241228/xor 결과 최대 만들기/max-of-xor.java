@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         init();
-        solve(1,0);
+        solve(0,0);
         output();
     }
 
@@ -29,7 +29,7 @@ public class Main {
         results = new ArrayList<>();
     }
 
-    public static void solve(int curN, int cnt) {
+    public static void solve(int start, int cnt) {
         if(cnt == M) {
             int value = 0;
             for(int i=0; i<results.size(); i++) {
@@ -39,8 +39,8 @@ public class Main {
             return;
         }
 
-        for(int i=curN; i<=N; i++) {
-            results.add(i);
+        for(int i=start; i<N; i++) {
+            results.add(numbers[i]);
             solve(i+1, cnt+1);
             results.remove(results.size()-1);
         }
