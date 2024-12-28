@@ -31,8 +31,8 @@ public class Main {
 
     public static void solve(int curN, int cnt) {
         if(cnt == M) {
-            int value = results.get(0);
-            for(int i=1; i<results.size(); i++) {
+            int value = 0;
+            for(int i=0; i<results.size(); i++) {
                 value = value ^ results.get(i);
             }
             max = Math.max(value, max);
